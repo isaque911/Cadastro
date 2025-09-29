@@ -25,7 +25,6 @@ function Home() {
       !inputEmail.current.value.trim() ||
       !inputPassword.current.value.trim()
     ) {
-      // eslint-disable-next-line no-undef
       return (res.json().message = "Por favor, preencha todos os campos!");
     }
     try {

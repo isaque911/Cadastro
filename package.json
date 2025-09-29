@@ -1,4 +1,5 @@
 {
+  "homepage": "https://isaque911.github.com/Cadastro",
   "name": "cadastro",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +9,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "server": "node server.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@prisma/client": "^6.16.1",
