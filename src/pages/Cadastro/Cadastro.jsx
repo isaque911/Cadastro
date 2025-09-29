@@ -21,11 +21,12 @@ function Home() {
 
   async function createUsers() {
     if (
-      !inputName.current.value.trim() &&
-      !inputEmail.current.value.trim() &&
+      !inputName.current.value.trim() ||
+      !inputEmail.current.value.trim() ||
       !inputPassword.current.value.trim()
     ) {
-      return alert("Por favor, preencha todos os campos!");
+      // eslint-disable-next-line no-undef
+      return (res.json().message = "Por favor, preencha todos os campos!");
     }
     try {
       await api.post("/usuario", {
@@ -70,11 +71,6 @@ function Home() {
           Cadastrar
         </button>
       </form>
-
-      <div className="remember">
-        <p>Deseja lembrar as credenciais?</p>
-        <input type="checkbox" />
-      </div>
 
       {users.map((user) => (
         <div key={user.id} className="card">
